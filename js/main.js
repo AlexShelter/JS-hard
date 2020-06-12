@@ -1,27 +1,38 @@
+'use strict'
 // УСЛОЖНЕННОЕ
 
-let num = 266219;
+let lang = 'eng';
 
-num = String(num);
-// console.log(typeof num);
-
-num = num.split('');
-console.log(num);
-
-function count(num) {
-  let result = 1;
-  for (let i = 0; i < num.length; i++) {
-    result*=num[i];
-  }
-  return result;
+let engDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+let ruDays = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+if (lang === 'ru') {
+  console.log(ruDays);
+} else if (lang === 'eng') {
+  console.log(engDays);
+} else {
+  console.log('choose your languge');
 }
 
-let result = count(num);
-console.log(result);
+switch(lang) {
+  case 'ru': 
+   console.log(ruDays);
+   break
+  case 'eng':
+   console.log(engDays);
+   break
+  default:
+  console.log('choose your languge');
+  break
+}
 
-result = result ** 3;
-console.log(result);
+let days = [engDays, ruDays];
+let i = lang === 'ru' ? 1 : 0;
+console.log(days[i]);
 
-result = String(result);
+let namePerson = 'Артем'
 
-console.log(result.charAt(0) + result.charAt(1));
+
+let message = namePerson === 'Артем' ? 'директор' : 
+              namePerson === 'Максим'? 'преподаватель': 'студент';
+
+console.log(message);
